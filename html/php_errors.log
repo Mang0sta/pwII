@@ -1,0 +1,40 @@
+[03-May-2025 15:32:32 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:27
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(27): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 27
+[03-May-2025 15:32:36 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:27
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(27): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 27
+[03-May-2025 15:32:56 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:16
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(16): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 16
+[03-May-2025 15:32:58 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:16
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(16): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 16
+[03-May-2025 15:33:53 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:16
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(16): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 16
+[03-May-2025 15:34:17 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:27
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(27): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 27
+[03-May-2025 15:34:18 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:16
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(16): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 16
+[03-May-2025 15:34:20 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'db_users.users' doesn't exist in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php:16
+Stack trace:
+#0 C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php(16): mysqli->prepare('SELECT p.*, u.n...')
+#1 {main}
+  thrown in C:\xampp\htdocs\4 publicacion con imagen\html\get_posts.php on line 16

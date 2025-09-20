@@ -1,0 +1,114 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #252525; /* Azul oscuro o negro para modo oscuro */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav-btn {
+    padding: 8px 12px;
+    background-color: #3b5a8c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .nav-btn:hover {
+    background-color: #94bdf4;
+  }
+  
+  .dark-toggle {
+    padding: 8px 12px;
+    background-color: #444;
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .dark-toggle:hover {
+    background-color: #666;
+  }
+
+/*   */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #444, #666); /* gris suave */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.content .container {
+    max-width: 500%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.report-table tbody tr {
+    background-color: #d0d0d0;
+}
+
+.report-table tbody tr:hover {
+    background-color: #bbb;
+}
+
+.report-table th {
+    background-color: #666;
+    font-weight: bold;
+    color: black;
+}
+
+.report-table th, .report-table td {
+    border: 2px solid #aaa;
+    padding: 8px;
+    text-align: left;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.report-header h3 {
+    margin: 0;
+}
+
+.report-header span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1877f2;
+}

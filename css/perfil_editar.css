@@ -1,0 +1,216 @@
+.main-header-blue {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4682B4; /* Azul claro */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav-btn {
+    padding: 8px 12px;
+    background-color: #AECBFA; /* Azul claro bonito */
+    color: #000080; /* Azul marino */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #d3e3fd;
+  }
+  
+  .dark-toggle {
+    padding: 8px 12px;
+    background-color: #444;
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dark-toggle:hover {
+    background-color: #333;
+  }
+  
+/*   */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+   background: linear-gradient(to right, #a7d9ed, #d1f0ff);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: blue; /* azul oscuro o puedes poner 'blue' */
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+
+.container {
+    width: 90%; 
+    max-width: 700px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 80px; 
+    padding-bottom: 30px; 
+    box-sizing: border-box; 
+}
+
+
+.form-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.search-bar {
+    background: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/*
+.container {
+    margin: 0 15px;
+    
+}*/ 
+
+/*.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background:#fff ;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+
+}
+
+.form-box.active {
+    display:block;
+}*/
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #eee;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #7494ec;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #6884d3;
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: none;
+}
+
+p a{
+    color: #7494ec;
+    text-decoration: none;
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+
+
+
+.delete-account-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Opcional: Estilo al pasar el ratón por encima */
+.delete-account-button:hover {
+    background-color: darkred; /* Un tono de rojo más oscuro al hacer hover */
+}
+

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #a7d9ed, #d1f0ff); /* Degradado de celeste a un celeste más claro */
+    color: #333;
+}
+
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px; /* Aumentar el padding */
+    background: #fff;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+.form-box h2 {
+    font-size: 36px; /* Ligeramente más grande */
+    text-align: center;
+    margin-bottom: 30px; /* Más espacio debajo del título */
+    color: #555; /* Un tono de gris más suave */
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #777; /* Gris un poco más claro */
+    font-weight: 500; /* Ligeramente más grueso */
+    text-align: left;
+}
+
+.form-box input[type="email"],
+.form-box input[type="password"],
+.form-box input[type="text"],
+.form-box input[type="date"],
+.form-box select {
+    width: calc(100% - 20px);
+    padding: 14px; /* Un poco más de padding */
+    background: #f0f0f0; /* Un gris más claro de fondo */
+    border-radius: 8px; /* Bordes más redondeados */
+    border: 1px solid #ddd; /* Borde sutil */
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 25px; /* Más espacio entre campos */
+    transition: border-color 0.3s ease; /* Transición suave del borde */
+}
+
+.form-box input::placeholder,
+.form-box select option {
+    color: #aaa; /* Color del placeholder más claro */
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    border-color: #7494ec; /* Resaltar con el color principal al enfocar */
+    box-shadow: 0 0 6px rgba(116, 148, 236, 0.5); /* Sombra al enfocar */
+}
+
+.form-box button {
+    width: 100%;
+    padding: 14px; /* Un poco más de padding */
+    background-color: #7494ec;
+    border-radius: 8px; /* Bordes más redondeados */
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Ligeramente más grande */
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 25px; /* Más espacio antes del siguiente elemento */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil del botón */
+}
+
+.form-box button:hover {
+    background: #6884d3; /* Tono ligeramente más oscuro al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.form-box p {
+    font-size: 15px; /* Ligeramente más grande */
+    text-align: center;
+    margin-bottom: 0;
+    color: #555; /* Tono de gris más suave */
+}
+
+.form-box p a {
+    color: #7494ec;
+    text-decoration: none;
+    font-weight: 500; /* Ligeramente más grueso */
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 12px; /* Un poco más de padding */
+    border-radius: 6px; /* Bordes más redondeados */
+    margin-bottom: 20px; /* Más espacio */
+    text-align: left;
+    font-size: 15px; /* Ligeramente más grande */
+}
+
+.success-message {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 12px; /* Un poco más de padding */
+    border-radius: 6px; /* Bordes más redondeados */
+    margin-bottom: 20px; /* Más espacio */
+    text-align: center;
+    font-size: 15px; /* Ligeramente más grande */
+}

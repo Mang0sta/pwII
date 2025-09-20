@@ -1,0 +1,155 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px 0; /* Añadir un poco de padding vertical al body */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Asegurar que el body ocupe al menos la altura de la ventana */
+    box-sizing: border-box; /* Incluir padding y border en el ancho y alto */
+}
+
+.container {
+    background-color: #fff;
+    width: 90%; /* Ajustar el ancho del contenedor */
+    max-width: 600px; /* Establecer un ancho máximo */
+    margin-top: 40px; /* Ajustar el margen superior */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el contenido dentro del contenedor */
+    box-sizing: border-box;
+}
+
+/* Estilos del Header (movidos desde inline) */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007bff; /* Un azul más moderno */
+    color: white;
+    padding: 15px 20px; /* Ajustar padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+header a {
+    font-size: 24px; /* Aumentar el tamaño del logo */
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Aumentar el espacio entre elementos del header */
+}
+
+/* Estilos de los Formularios */
+.form-box {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    display: none; /* Ocultar por defecto */
+}
+
+.form-box.active {
+    display: block; /* Mostrar el formulario activo */
+}
+
+.form-box h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-box input[type="email"],
+.form-box input[type="password"],
+.form-box input[type="text"],
+.form-box input[type="date"],
+.form-box select {
+    width: calc(100% - 20px); /* Ancho completo con un poco de padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Incluir padding y border en el ancho */
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    outline: none;
+    border-color: #007bff; /* Resaltar el borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Añadir una sombra suave al enfocar */
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    text-align: left; /* Alinear las etiquetas a la izquierda */
+}
+
+.form-box button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+    margin-top: 10px;
+}
+
+.form-box button:hover {
+    background-color: #0056b3; /* Un tono más oscuro al pasar el ratón */
+}
+
+.form-box p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+.form-box p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #dc3545; /* Rojo para mensajes de error */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.success-message {
+    color: #28a745; /* Verde para mensajes de éxito */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
