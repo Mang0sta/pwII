@@ -247,7 +247,7 @@ if (isset($_GET['descargar_pdf_publicaciones'])) {
 </head>
 <body>
 <header class="main-header">
-  <a href="publicacion.php" class="logo">Social Link</a>
+  <a href="publicacion.php" class="logo">⚽ Stadium</a>
   <div class="nav-buttons">
   
     <?php if (isset($_SESSION['email'])): ?>

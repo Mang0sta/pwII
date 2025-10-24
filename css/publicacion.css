@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #4682B4; /* Azul claro */
+    background-color: #007747; /* 🟢 Verde oscuro/Césped para el encabezado principal */
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -13,10 +13,11 @@
   }
   
   .logo {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
-    margin-left: 10px;
-    color: white;
+    margin-left: 15px;
+    color: #4c56dd; /* Azul/Púrpura */
+    text-shadow: 1px 1px 2px rgba(121, 117, 124, 0.7);
     text-decoration: none;
   }
   
@@ -24,207 +25,314 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    position: relative; /* Importante para posicionar el dropdown */
   }
   
   .nav-btn {
-    padding: 8px 12px;
-    background-color: #AECBFA; /* Azul claro bonito */
-    color: #000080; /* Azul marino */
+    padding: 8px 15px;
+    background-color: #00ff88;
+    color: #333333;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .nav-btn:hover {
-    background-color: #d3e3fd;
+    background-color: #128a52;
+    transform: translateY(-2px);
   }
   
   .dark-toggle {
-    padding: 8px 12px;
-    background-color: #444;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #eee;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     margin-left: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   .dark-toggle:hover {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+  }
+  
+  
+  /* ---------------------------------------------------- */
+  /* ⚽ MEJORA DEL DISEÑO DEL DROPDOWN */
+  /* ---------------------------------------------------- */
+
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
   }
 
+  /* ⚽ MEJORA DEL ESTILO DEL SELECT BOX (MENÚ DESPLEGABLE DE CATEGORÍAS) */
+  #filterCategory {
+    /* Elimina el estilo 'inline' y centraliza el control aquí */
+    padding: 10px 15px; /* Aumenta el padding para que parezca un botón */
+    border: 2px solid #00A86B; /* Borde verde césped */
+    border-radius: 25px; /* Bordes redondeados tipo píldora */
+    background-color: #FFFFFF; /* Fondo blanco para contraste */
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    
+    /* Esto ayuda a ocultar la flecha nativa del navegador en algunos casos,
+      pero el estilo de la flecha sigue siendo difícil de controlar. */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Añadir una flecha personalizada para control total (requiere más CSS, pero empezamos aquí): */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007747'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 18px;
+    padding-right: 30px; /* Espacio para la flecha SVG */
+    
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
 
+  #filterCategory:hover {
+    border-color: #007747; /* Verde más oscuro al pasar el ratón */
+    background-color: #F8FFF8; /* Verde muy pálido al pasar el ratón */
+  }
 
-body {
-    font-family: Arial, sans-serif;
-   background: linear-gradient(to right, #a7d9ed, #d1f0ff);
+  /* Estilo para las opciones dentro del menú (limitado por el navegador) */
+  #filterCategory option {
+    background-color: #3fe7c359;
+    color: #333;
+  }
+  
+  /* ---------------------------------------------------- */
+  /* CÓDIGO RESTANTE */
+  /* ---------------------------------------------------- */
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* ⚽ PROPIEDADES AÑADIDAS PARA LA IMAGEN DE FONDO */
+    background-image: url('../img/field_2.jpg'); /* REEMPLAZA CON LA URL DE TU IMAGEN */
+    background-color: #CCFF99; /* Color de respaldo si la imagen falla */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* ---------------------------------------------------- */
+    
     margin: 0;
     padding: 0;
     text-align: center;
-}
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: blue; /* azul oscuro o puedes poner 'blue' */
-	padding: 10px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    color: #333;
   }
-.search-bar {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:linear-gradient(to right, #4aeebd, #99FFCC, #b291eeff);
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .search-bar {
     background: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 20px;
     font-size: 16px;
-}
-
-.content {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .content {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 600px;
-}
-
-.new-post-container {
+  }
+  
+  .new-post-container {
     background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
     text-align: left;
-}
-
-.new-post-container textarea {
+  }
+  
+  .new-post-container textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: none;
-}
-
-.new-post-container input {
-    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #c0e0b0;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 16px;
+  }
+  
+  .new-post-container input {
+    margin-top: 15px;
     display: block;
-}
-
-.new-post-container button {
-    background: #1877f2;
+  }
+  
+  .new-post-container button {
+    background: #00A86B; /* 🟢 Verde césped vibrante para el botón de publicación */
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.new-post-container button:hover {
-    opacity: 0.8;
-}
-
-
-
-.container {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .new-post-container button:hover {
+    background-color: #008F5A;
+    transform: translateY(-2px);
+  }
+  
+  
+  /* ---------------------------------------------------- */
+  /* 🏟️ MEJORA DEL DISEÑO DE PUBLICACIONES */
+  /* ---------------------------------------------------- */
+  
+  .container {
+    /* Este contenedor se usa para la tabla de reportes al final. No lo tocamos. */
     max-width: 600px;
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
-}
-
-.main-container {
+  }
+  
+  .main-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-}
-
-
-.sidebar {
-    width: 250px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
+    padding-top: 80px;
+  }
+  
+  
+  .sidebar {
+    width: 280px;
+    background: #FFFFFF; /* Blanco */
+    padding: 25px;
+    border-radius: 15px; /* Más redondeado */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Sombra más suave y profunda */
     text-align: center;
-}
-
-.sidebar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.sidebar span {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-}
-
-
-.post {
+    border-top: 5px solid #FFD700; /* Línea dorada en la parte superior */
+  }
+  
+  /* Se asume que las publicaciones individuales usan la clase .post */
+  .post {
     flex: 1;
-    padding-left: 20px;
-}
-.user-info {
+    background: #FFFFFF; /* Fondo blanco sólido para el post */
+    padding: 20px; /* Más espacio interno */
+    border-radius: 15px; /* Bordes suaves */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra estándar */
+    margin-bottom: 25px; /* Más espacio entre posts */
+    border-left: 5px solid #00A86B; /* Línea verde de "césped" lateral para destacar */
+    transition: box-shadow 0.3s ease;
+  }
+
+  .post:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el ratón */
+  }
+
+  .user-info {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-}
-.user-info img {
-    width: 40px;
-    height: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE; /* Separador sutil */
+  }
+  .user-info img {
+    width: 50px; /* Icono de usuario más grande */
+    height: 50px;
     border-radius: 50%;
     margin-right: 15px;
-}
-.post-content {
-    background: #f0f2f5;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.buttons {
-    margin-top: 10px;
-}
-.buttons button {
-    margin-right: 10px;
-    padding: 5px 10px;
+    border: 3px solid #FFD700; /* Borde de trofeo */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  .post-content {
+    background: none; /* Eliminamos el fondo para que el fondo blanco del .post se vea */
+    padding: 0; /* Eliminamos el padding redundante */
+    border-radius: 0;
+    margin-bottom: 15px;
+    line-height: 1.7; /* Mejor legibilidad */
+    font-size: 16px;
+  }
+  
+  /* Estilos para el resto de elementos (botones, comentarios, etc.) se mantienen igual para consistencia */
+
+  .sidebar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #FFD700;
+    object-fit: cover;
+  }
+  
+  .sidebar span {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #008000;
+  }
+  
+  /* ... (el resto del código CSS sigue aquí) ... */
+
+  .buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  .buttons button {
+    padding: 8px 15px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    color: white;
-}
-
-
-
-.categories {
-    margin-top: 10px;
-    font-size: 14px;
-}
-.categories span {
-    background-color: #f0f2f5;
-    padding: 5px 10px;
     border-radius: 20px;
-    margin-right: 5px;
-    color: #1877f2;
+    color: white;
+    font-size: 15px;
     font-weight: bold;
-}
-
-.modal {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  
+  
+  .categories {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  .categories span {
+    background-color: #E6FFE6;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    color: #008000;
+    font-weight: bold;
+    border: 1px solid #CCEECC;
+  }
+  
+  .modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -232,216 +340,230 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 50%;
-    margin: 15% auto;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .close {
+    color: #888;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #333;
     text-decoration: none;
-    cursor: pointer;
-}
-
-.modal input,
-.modal textarea {
-    width: 100%;
-    padding: 10px;
+  }
+  
+  .modal input,
+  .modal textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-
-.comment-list {
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-}
-
-.comment-item {
-    margin-bottom: 10px;
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-/*  botones Editar y Eliminar */
-.edit-button {
-    background-color: #ffc107; 
+    border: 1px solid #c0e0b0;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  
+  .comment-list {
+    margin-top: 25px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+  }
+  
+  .comment-item {
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  /*  botones Editar y Eliminar */
+  .edit-button {
+    background-color: #00A86B; /* 🟢 Verde césped para editar */
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
     cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .edit-button:hover {
+    background-color: #008F5A;
+    transform: translateY(-1px);
+  }
+  
+  .delete-button {
+    background-color: #E74C3C; /* 🔴 Rojo pasión para eliminar */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #C0392B; 
+    transform: translateY(-1px);
+  }
+  
+  
+  .edit-comment-button {
+    background-color: #00A86B; /* 🟢 Verde césped para editar comentario */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 13px;
     margin-right: 5px;
-}
-
-.edit-button:hover {
-    background-color: #e0a800; 
-}
-
-.delete-button {
-    background-color: #dc3545; 
+  }
+  
+  .edit-comment-button:hover {
+    background-color: #008F5A;
+  }
+  
+  .delete-comment-button {
+    background-color: #E74C3C; /* 🔴 Rojo pasión para eliminar comentario */
     color: white;
+    padding: 6px 12px;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-}
-
-.delete-button:hover {
-    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
-}
-
-
-.edit-comment-button {
-    background-color: #ffc107; /* Amarillo */
-    color: white;
-    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .delete-comment-button:hover {
+    background-color: #C0392B;
+  }
+  
+  
+  .buttons button:first-child { /* likes de publicacion*/
+    background: #FFD700; /* 🥇 Dorado para el botón de "Me Gusta" */
+    color: #333;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-.edit-comment-button:hover {
-    background-color: #e0a800;
-}
-
-.delete-comment-button {
-    background-color: #dc3545; /* Rojo */
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.delete-comment-button:hover {
-    background-color: #c82333;
-}
-
-
-.buttons button:first-child { /* likes de publicacion*/
-    background: #1877f2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
+    border-radius: 20px;
+    padding: 8px 15px;
     cursor: pointer;
     margin-right: 10px;
-}
-
-.buttons button:first-child:hover {
-    opacity: 0.8;
-}
-
-/* liked */
-.buttons button:first-child.liked {
-    background: #0056b3; /* tono azul oscuro */
+    font-weight: bold;
+  }
+  
+  .buttons button:first-child:hover {
+    background-color: #CCAA00;
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+  
+  /* liked */
+  .buttons button:first-child.liked {
+    background: #00A86B; /* 🟢 Verde césped cuando ya se ha dado "Me Gusta" */
     color: white;
-}
-
-.buttons button:first-child.liked:hover {
-    background: #003d82; /* hover*/
-}
-
-/*   boton de likes de comentarios */
-
-.like-comment-button {
-    background: #1877f2; 
-    color: white;
+  }
+  
+  .buttons button:first-child.liked:hover {
+    background: #008F5A;
+  }
+  
+  /*   boton de likes de comentarios */
+  
+  .like-comment-button {
+    background: #FFD700; /* 🥇 Dorado para el botón de "Me Gusta" del comentario */
+    color: #333;
     border: none; 
-    border-radius: 5px; 
-    padding: 5px 8px; 
+    border-radius: 15px; 
+    padding: 6px 12px; 
     cursor: pointer;
     font-size: 0.9em; 
     margin-right: 5px;
     margin-top: 5px;
-}
-
-.like-comment-button.liked {
-    background: #0056b3; 
+  }
+  
+  .like-comment-button.liked {
+    background: #00A86B; /* 🟢 Verde césped cuando ya se ha dado "Me Gusta" al comentario */
     color: white;
     
-}
-
-.like-comment-button:hover {
-    background: #0056b3; 
-}
-
-.like-comment-button.liked:hover {
-    background: #003d82; 
-}
-
-/*.sidebar-profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 10px;
-    vertical-align: middle;
-    object-fit: cover;
-}*/
-
-   /* Ajustando el contenedor para la tabla de reportes */
-   .content .container {
-    max-width: 500%; /* Aumentamos el ancho máximo */
-    margin: 20px auto; /* Mantenemos el margen automático para centrar */
+  }
+  
+  .like-comment-button:hover {
+    background: #CCAA00; 
+  }
+  
+  .like-comment-button.liked:hover {
+    background: #008F5A; 
+  }
+  
+     /* Ajustando el contenedor para la tabla de reportes */
+     .content .container {
+    max-width: 500%; 
+    margin: 20px auto; 
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Añademos scroll horizontal si la tabla sigue siendo muy ancha */
-}
-
-.report-table tbody tr {
-    background-color: #e0f2f7; /* Un azul muy claro */
-}
-
-/* Para un efecto de hover sutil */
-.report-table tbody tr:hover {
-    background-color: #b3e5fc;
-}
-
-
-.report-table th { 
-    background-color: #075fd3;
-    font-weight: bold;
-}
-
-
-.report-table th, .report-table td {
-    border: 1px solid #888; /* Cambiamos el color a un gris más oscuro y aumentamos el grosor */
-    padding: 8px;
-    text-align: left;
-}
-
-.report-table th, .report-table td {
-    border: 1px solid #ddd; /* Líneas divisorias grises y delgadas (actual) */
-    padding: 8px;
-    text-align: left;
-}
-
-/* Para hacer las líneas divisorias más notorias */
-.report-table th, .report-table td {
-    border: 2px solid #aaa; /* Líneas divisorias grises más gruesas */
-}
-
+    overflow-x: auto; 
+  }
   
+  .report-table tbody tr {
+    background-color: #F8FFF8;
+  }
+  
+  /* Para un efecto de hover sutil */
+  .report-table tbody tr:hover {
+    background-color: #E6FFEE;
+  }
+  
+  
+  .report-table th { 
+    background-color: #008000;
+    font-weight: bold;
+    color: white;
+    padding: 12px 8px;
+  }
+  
+  
+  .report-table th, .report-table td {
+    border: 1px solid #BBBBBB;
+    padding: 10px 8px;
+    text-align: left;
+  }
+  
+  .report-table th, .report-table td {
+    border: 2px solid #AAAAAA; 
+  }
 
+  /* ======== EFECTO DE BALONES CAYENDO ======== */
+
+.balon {
+  position: fixed;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg");
+  background-size: cover;
+  pointer-events: none;
+  animation: caer linear forwards;
+}
+
+@keyframes caer {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}

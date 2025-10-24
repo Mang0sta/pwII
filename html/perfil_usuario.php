@@ -116,7 +116,7 @@ $db->closeConnection();
 </head>
 <body style="position: relative;">
 <header class="main-header">
-  <a href="publicacion.php" class="logo">Social Link</a>
+  <a href="publicacion.php" class="logo">⚽ Stadium</a>
   <div class="nav-buttons">
   
     <?php if (isset($_SESSION['email'])): ?>

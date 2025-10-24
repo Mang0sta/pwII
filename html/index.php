@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 $errors = [
@@ -19,34 +18,61 @@ function showError($error) {
 function isActiveForm($formName, $activeForm) {
     return $formName === $activeForm ?  'active' : '';
 }
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stadium ⚽</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <style>
-        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background:linear-gradient(to right, #CCFF99, #99FFCC, #b291eeff);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #8b4efdff; /* Verde oscuro */
+            padding: 12px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffffff;
+            text-decoration: none;
+        }
+
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f4f4f4;
+            background: url('../img/stadium_bg.jpg') no-repeat center center/cover;
+            padding-top: 80px;
         }
 
         .form-box {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 2px solid #fbc02d;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 400px;
             margin: 20px;
-            display: none; 
+            display: none;
         }
 
         .form-box.active {
@@ -56,7 +82,7 @@ function isActiveForm($formName, $activeForm) {
         .form-box h2 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color: #004d40;
         }
 
         .form-box input[type=email],
@@ -68,36 +94,24 @@ function isActiveForm($formName, $activeForm) {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
         }
 
         .form-box button {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
-            color: white;
+            background-color: #fbc02d;
+            color: #004d40;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
             font-size: 16px;
         }
 
         .form-box button:hover {
-            background-color: #0056b3;
-        }
-
-        .form-box .error-message {
-            color: red;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .form-box .success-message {
-            color: green;
-            margin-bottom: 10px;
-            text-align: center;
+            background-color: #c49000;
         }
 
         .form-box p {
@@ -107,186 +121,148 @@ function isActiveForm($formName, $activeForm) {
         }
 
         .form-box p a {
-            color: #007bff;
+            color: #004d40;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .form-box p a:hover {
             text-decoration: underline;
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: blue;
-            padding: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header a {
-            font-size: 20px;
+        .error-message {
+            color: red;
+            text-align: center;
             font-weight: bold;
-            margin-left: 10px;
-            color: white;
-            text-decoration: none;
         }
 
-        header div {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .success-message {
+            color: green;
+            text-align: center;
+            font-weight: bold;
         }
 
-        header div a {
-            color: white;
-            text-decoration: none;
+        /* Banner */
+        .banner {
+            text-align: center;
+            margin-top: 100px;
         }
 
-        header div a:hover {
-            text-decoration: underline;
+        .banner img {
+            width: 140px;
+            margin-bottom: 10px;
+        }
+
+        .banner h2 {
+            color: #004d40;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* Balón animado */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .ball {
+            width: 80px;
+            height: 80px;
+            background: url('../images/ball.png') no-repeat center/contain;
+            animation: bounce 2s infinite;
+            margin: 20px auto;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <a href="index.php">Social Link</a>
-        <div>
-            </div>
-    </header>
 
-    <div class="container" style="margin-top: 60px;">
-        <div class="form-box <?= isActiveForm('login', $activeForm); ?>" id="login-form">
-            <form action="login_register.php" method="post" id="loginForm">
-                <h2>Login</h2>
-                <div id="login-message">
-                    <?= showError($errors['login']); ?>
-                </div>
-                <input type="email" name="email" placeholder="Email"   required id="login-email">
-                <input type="password" name="password" placeholder="Password"    required id="login-password">
-                <button type="submit" name="login">Login</button>
-                <p>No tienes una cuenta? <a href="#" onclick="showForm('register-form')">Regístrate</a></p>
-            </form>
-        </div>
-        <div class="form-box <?= isActiveForm('register', $activeForm); ?>" id="register-form">
-            <h2>Registrar</h2>
-            <div id="register-message"></div>
-            <input type="text" id="register-name" name="name" oninvalid="this.setCustomValidity('Favor de llenar este campo')" oninput="setCustomValidity('')" placeholder="Nombre"   required>
-            <input type="text" id="register-apellidos" name="apellidos" oninvalid="this.setCustomValidity('Favor de llenar este campo')" oninput="setCustomValidity('')" placeholder="Apellidos" required>
-            <select id="register-genero" name="genero" oninvalid="this.setCustomValidity('Favor de llenar este campo')" oninput="setCustomValidity('')" required>
-                <option value="">--Género--</option>
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-            </select>
-            <input type="email" id="register-email" name="email" oninvalid="this.setCustomValidity('Favor de llenar este campo')" oninput="setCustomValidity('')" placeholder="Email"   required>
-            <input type="password" id="register-password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W]).{8,40}$" oninvalid="this.setCustomValidity('La contraseña debe tener entre 8 y 40 caracteres y contener al menos una letra minúscula, una mayúscula, un número y un carácter especial.')" oninput="setCustomValidity('')" placeholder="Password" required>
-            <input type="date" class="form-control" oninvalid="this.setCustomValidity('Favor de llenar este campo')" oninput="setCustomValidity('')" id="ID_FECHA_REGRISTRARSE.HTML"  name="cumpleanos"   required>
-            <label for="register-foto">Foto de perfil:</label>
-            <input type="file" id="register-foto" name="foto" accept="image/png, image/jpeg">
-            <button type="button" onclick="registerUser()">Crear</button>
-            <p>Ya tienes una cuenta? <a href="#" onclick="showForm('login-form')">Login</a></p>
-        </div>
+<header>
+    <a href="index.php">⚽ Stadium</a>
+    <div></div>
+</header>
+
+<div class="banner">
+    <img src="../img/worldcup_logo.png" alt="Mundial Logo">
+    <h2>Conéctate con fanáticos del fútbol de todo el mundo 🌍⚽</h2>
+    <div class="ball"></div>
+</div>
+
+<div class="container">
+    <!-- Login -->
+    <div class="form-box <?= isActiveForm('login', $activeForm); ?>" id="login-form">
+        <form action="login_register.php" method="post" id="loginForm">
+            <h2>Inicia sesión en la pasión del Mundial</h2>
+            <div id="login-message"><?= showError($errors['login']); ?></div>
+            <input type="email" name="email" placeholder="Correo electrónico" required id="login-email">
+            <input type="password" name="password" placeholder="Contraseña" required id="login-password">
+            <button type="submit" name="login">Entrar al campo</button>
+            <p>¿Aún no tienes cuenta? <a href="#" onclick="showForm('register-form')">Únete al equipo</a></p>
+        </form>
     </div>
 
-    <script>
-    function registerUser() {
-        const name = document.getElementById('register-name').value;
-        const apellidos = document.getElementById('register-apellidos').value;
-        const genero = document.getElementById('register-genero').value;
-        const email = document.getElementById('register-email').value;
-        const password = document.getElementById('register-password').value;
-        const cumpleanos = document.getElementById('ID_FECHA_REGRISTRARSE.HTML').value;
-        const fotoInput = document.getElementById('register-foto');
-        const fotoFile = fotoInput.files[0]; // obtener el archivo seleccionado
-        const messageDiv = document.getElementById('register-message');
-
-        // validación de contraseña
-        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W]).{8,40}$/;
-        if (!passwordPattern.test(password)) {
-            alert('La contraseña debe tener entre 8 y 40 caracteres y contener al menos una letra minúscula, una mayúscula, un número y un carácter especial.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('apellidos', apellidos);
-        formData.append('genero', genero);
-        formData.append('email', email);
-        formData.append('password', password);
-        formData.append('cumpleanos', cumpleanos);
-
-        if (fotoFile) {
-            formData.append('foto', fotoFile); // 
-            formData.append('fotoNombre', fotoFile.name); // 
-        }
-
-        fetch('api_register.php', {
-            method: 'POST',
-            body: formData // 
-        })
-        .then(response => response.json())
-        .then(result => {
-            messageDiv.innerHTML = '';
-            if (result.error) {
-                messageDiv.innerHTML = `<p class="error-message">${result.error}</p>`;
-            } else if (result.message) {
-                messageDiv.innerHTML = `<p class="success-message">${result.message}</p>`;
-                setTimeout(() => {
-                    window.location.href = 'index.php';
-                }, 1500);
-            }
-        })
-        .catch(error => {
-            messageDiv.innerHTML = `<p class="error-message">Error de red: ${error}</p>`;
-        });
-    }
-
-    function showForm(formId) {
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-
-        loginForm.classList.remove('active');
-        registerForm.classList.remove('active');
-
-        document.getElementById(formId).classList.add('active');
-    }
-
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        showForm('<?= $activeForm ?>-form');
-    });
-    </script>
-
-    <script>
-        var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1;
-    var yy = today.getFullYear();
-    if(dd<10){
-    dd='0'+dd
-    }
-    if(mm<10){
-    mm='0'+mm
-    } today = yy + '-' + mm + '-' + dd;
-    document.getElementById("ID_FECHA_REGRISTRARSE.HTML").setAttribute("max", today);
-    </script>
+    <!-- Registro -->
+    <div class="form-box <?= isActiveForm('register', $activeForm); ?>" id="register-form">
+        <h2>Regístrate y únete al equipo</h2>
+        <div id="register-message"></div>
+        <input type="text" id="register-name" name="name" placeholder="Nombre" required>
+        <input type="text" id="register-apellidos" name="apellidos" placeholder="Apellidos" required>
+        <select id="register-genero" name="genero" required>
+            <option value="">--Género--</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+        <input type="email" id="register-email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" id="register-password" name="password"
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W]).{8,40}$"
+               placeholder="Contraseña" required>
+        <input type="date" id="ID_FECHA_REGRISTRARSE.HTML" name="cumpleanos" required>
+        <label for="register-foto">Foto de perfil:</label>
+        <input type="file" id="register-foto" name="foto" accept="image/png, image/jpeg">
+        <button type="button" onclick="registerUser()">Registrar jugador</button>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="showForm('login-form')">Volver al campo</a></p>
+    </div>
+</div>
 
 <script>
-    function handleImageUpload()
-    {
-    var image = document.getElementById("register-foto").files[0];
-        var reader = new FileReader();
-        reader.onload = function(e) {
-        document.getElementById("display-image").src = e.target.result;
+function registerUser() {
+    const formData = new FormData();
+    formData.append('name', document.getElementById('register-name').value);
+    formData.append('apellidos', document.getElementById('register-apellidos').value);
+    formData.append('genero', document.getElementById('register-genero').value);
+    formData.append('email', document.getElementById('register-email').value);
+    formData.append('password', document.getElementById('register-password').value);
+    formData.append('cumpleanos', document.getElementById('ID_FECHA_REGRISTRARSE.HTML').value);
+    const foto = document.getElementById('register-foto').files[0];
+    if (foto) formData.append('foto', foto);
+
+    const messageDiv = document.getElementById('register-message');
+    fetch('api_register.php', { method: 'POST', body: formData })
+    .then(response => response.json())
+    .then(result => {
+        messageDiv.innerHTML = '';
+        if (result.error) {
+            messageDiv.innerHTML = `<p class="error-message">${result.error}</p>`;
+        } else if (result.message) {
+            messageDiv.innerHTML = `<p class="success-message">${result.message}</p>`;
+            setTimeout(() => window.location.href = 'index.php', 1500);
         }
-        reader.readAsDataURL(image);
+    })
+    .catch(error => {
+        messageDiv.innerHTML = `<p class="error-message">Error de red: ${error}</p>`;
+    });
 }
+
+function showForm(formId) {
+    document.getElementById('login-form').classList.remove('active');
+    document.getElementById('register-form').classList.remove('active');
+    document.getElementById(formId).classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    showForm('<?= $activeForm ?>-form');
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("ID_FECHA_REGRISTRARSE.HTML").setAttribute("max", today);
+});
 </script>
 
 </body>

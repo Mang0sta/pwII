@@ -264,7 +264,7 @@ $db->closeConnection();
 </head>
 <body >
 <header class="main-header">
-  <a href="publicacion.php" class="logo">Social Link</a>
+  <a href="publicacion.php" class="logo">⚽ Stadium</a>
   <div class="nav-buttons">
   <select id="filterCategory" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; /* Ya no necesitas margin-right aquí si usas gap */" onchange="filterPostsByCategory(this.value)">
             <option value="">Todas las categorías</option>
@@ -306,7 +306,7 @@ $db->closeConnection();
             <textarea id="newPostText" placeholder="¿Qué estás pensando?" rows="3" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
             <label for="newPostImage" style="display: block; margin-bottom: 5px;">Subir imagen:</label>
             <input type="file" id="newPostImage" style="width: 100%; margin-bottom: 10px;">
-            <button onclick="publishPost()" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Publicar</button>
+            <button onclick="publishPost()" style="background-color: #11b843ff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Publicar</button>
         </div>
 
         <div class="container">
@@ -345,7 +345,7 @@ $db->closeConnection();
             <label for="editPostImage" style="display: block; margin-bottom: 5px;">Cambiar imagen (opcional):</label>
             <input type="file" id="editPostImage" style="width: 100%; margin-bottom: 10px;">
 
-            <button type="button" onclick="saveEditedPost()" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Guardar Cambios</button>
+            <button type="button" onclick="saveEditedPost()" style="background-color: #11b843ff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Guardar Cambios</button>
         </form>
     </div>
 </div>
@@ -357,7 +357,7 @@ $db->closeConnection();
         <h2>Editar Comentario</h2>
         <textarea id="editCommentText" rows="4" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
         <input type="hidden" id="editingCommentId">
-        <button onclick="saveEditedComment()" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Guardar Cambios</button>
+        <button onclick="saveEditedComment()" style="background-color: #11b843ff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Guardar Cambios</button>
     </div>
 </div>
 
@@ -760,7 +760,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.body;
 
+    // --- Función para crear balones durante unos segundos ---
+    function lluviaDeBalones() {
+        function crearBalon() {
+        const balon = document.createElement("div");
+        balon.classList.add("balon");
+        balon.style.left = Math.random() * 100 + "vw";
+        balon.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        container.appendChild(balon);
+        setTimeout(() => balon.remove(), 5000);
+        }
+
+        // Crear balones por 4 segundos
+        const intervalo = setInterval(crearBalon, 200);
+        setTimeout(() => clearInterval(intervalo), 4000);
+    }
+
+    // --- Ejecutar lluvia al cargar la página ---
+    lluviaDeBalones();
+    });
 
 </script>
 

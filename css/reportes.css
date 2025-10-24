@@ -1,94 +1,105 @@
+/* ---------------------------------------------------- */
+/* 🏟️ HEADER Y NAVEGACIÓN - Ajuste de colores */
+/* ---------------------------------------------------- */
 .main-header-blue {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #4682B4; /* Azul claro */
+    background-color: #007747; /* 🟢 Verde oscuro/Césped principal */
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: #ffffff; /* 🥇 Dorado/Amarillo Trofeo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background-color: #00A86B; /* 🟢 Verde césped vibrante */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Píldora/Medalla */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    background-color: #008F5A; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.dark-toggle {
+    padding: 10px 15px;
+    background-color: #333333; /* Fondo oscuro (Balón) */
+    color: #FFD700; /* Dorado para el icono/texto */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dark-toggle:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------- */
+/* 🌿 CUERPO Y CONTENEDORES - Tematización */
+/* ---------------------------------------------------- */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fondo que simula el degradado suave de un estadio (verde y amarillo claro) */
+    background: linear-gradient(to right,#93c265, #62a4e2); 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+header {
+    /* Usamos el estilo ya definido en .main-header-blue */
+    background-color: #007747; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .nav-btn {
-    padding: 8px 12px;
-    background-color: #AECBFA; /* Azul claro bonito */
-    color: #000080; /* Azul marino */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-btn:hover {
-    background-color: #d3e3fd;
-  }
-  
-  .dark-toggle {
-    padding: 8px 12px;
-    background-color: #444;
-    color: #eee;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dark-toggle:hover {
-    background-color: #333;
-  }
-
-
-
-/*  */
-
-
-body {
-    font-family: Arial, sans-serif;
-   background: linear-gradient(to right, #a7d9ed, #d1f0ff);
-    margin: 0;
-    padding: 0;
-    text-align: center;
 }
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: blue; /* azul oscuro o puedes poner 'blue' */
-	padding: 10px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-  }
 .search-bar {
     background: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border: 1px solid #c0e0b0; /* Borde sutil verde claro */
+    padding: 10px 15px;
+    border-radius: 25px; /* Píldora */
     font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .content {
@@ -98,50 +109,59 @@ header {
     max-width: 600px;
 }
 
+/* ⚽ CAJA PARA NUEVAS PUBLICACIONES */
 .new-post-container {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    background: #FFFFFF;
+    padding: 20px; /* Más padding */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más notable */
+    border-left: 5px solid #FFD700; /* Línea de acento Dorado */
+    margin-bottom: 25px;
     text-align: left;
 }
 
 .new-post-container textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: none;
+    padding: 12px;
+    border: 1px solid #c0e0b0; /* Borde verde suave */
+    border-radius: 8px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    font-size: 16px;
 }
 
 .new-post-container input {
-    margin-top: 10px;
+    margin-top: 15px;
     display: block;
 }
 
 .new-post-container button {
-    background: #1877f2;
+    background: #E74C3C; /* 🔴 Rojo pasión (Botón de acción principal) */
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .new-post-container button:hover {
-    opacity: 0.8;
+    background-color: #C0392B;
+    transform: translateY(-2px);
 }
 
 
 
+/* ⚽ CONTENEDOR PRINCIPAL */
 .container {
     max-width: 600px;
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
@@ -149,86 +169,131 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
-    margin: 20px auto;
-    max-width: 900px;
+    gap: 30px; /* Más separación */
+    margin: 30px auto;
+    max-width: 1000px;
 }
 
-
+/* ⚽ BARRA LATERAL (Sidebar) */
 .sidebar {
-    width: 250px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 280px; /* Más ancho */
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    border-top: 5px solid #00A86B; /* Línea de acento Verde Césped */
     text-align: center;
 }
 
 .sidebar img {
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Más grande */
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #FFD700; /* Borde de Trofeo */
+    object-fit: cover;
 }
 
 .sidebar span {
     display: block;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #008000; /* Verde estadio */
 }
 
 
+/* ⚽ PUBLICACIONES INDIVIDUALES */
 .post {
     flex: 1;
-    padding-left: 20px;
+    background: #FFFFFF; /* Fondo blanco sólido para el post */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    border-left: 5px solid #FFD700; /* Línea de acento Dorado */
+    transition: box-shadow 0.3s ease;
 }
+
+.post:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
 .user-info {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEEEE;
 }
 .user-info img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 15px;
+    border: 3px solid #00A86B; /* Borde verde */
 }
 .post-content {
-    background: #f0f2f5;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    background: #F0FFF0; /* ⚪ Verde menta muy claro para el contenido del post */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 .buttons {
-    margin-top: 10px;
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
 }
 .buttons button {
-    margin-right: 10px;
-    padding: 5px 10px;
+    padding: 8px 15px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botón de "Me Gusta" (like) - Anteriormente .buttons button:first-child */
+.buttons button:first-child { 
+    background: #FFD700; /* 🥇 Dorado para el botón de "Me Gusta" */
+    color: #333;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.buttons button:first-child:hover {
+    background-color: #CCAA00;
+    transform: translateY(-1px);
+}
+
+/* Botón de Comentar/Compartir - Anteriormente .buttons button:nth-child(2) */
+.buttons button:nth-child(2) {
+    background: #00A86B; /* 🟢 Verde césped vibrante */
     color: white;
 }
 
-.buttons button:nth-child(2) {
-    background: #42b72a;
+.buttons button:nth-child(2):hover {
+    background-color: #008F5A;
 }
 
+
 .categories {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 14px;
 }
 .categories span {
-    background-color: #f0f2f5;
-    padding: 5px 10px;
+    background-color: #E6FFE6;
+    padding: 6px 12px;
     border-radius: 20px;
-    margin-right: 5px;
-    color: #1877f2;
+    margin-right: 8px;
+    color: #008000;
     font-weight: bold;
+    border: 1px solid #CCEECC;
 }
 
+/* ⚽ MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -237,144 +302,119 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 50%;
-    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    color: #888;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #333;
     text-decoration: none;
-    cursor: pointer;
 }
 
 .modal input,
 .modal textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #c0e0b0;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 
 .comment-list {
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
 }
 
 .comment-item {
-    margin-bottom: 10px;
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-/*  botones Editar y Eliminar */
-.edit-button {
-    background-color: #ffc107; 
+/* ⚽ BOTONES DE ACCIÓN POST/COMENTARIO */
+.edit-button, .edit-comment-button {
+    background-color: #00A86B; /* 🟢 Verde césped para editar */
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
     cursor: pointer;
+    margin-right: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover, .edit-comment-button:hover {
+    background-color: #008F5A;
+    transform: translateY(-1px);
+}
+
+.delete-button, .delete-comment-button {
+    background-color: #E74C3C; /* 🔴 Rojo pasión para eliminar */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover, .delete-comment-button:hover {
+    background-color: #C0392B; 
+    transform: translateY(-1px);
+}
+
+.edit-comment-button, .delete-comment-button {
+    padding: 6px 12px;
+    border-radius: 15px; 
+    font-size: 13px;
     margin-right: 5px;
-}
-
-.edit-button:hover {
-    background-color: #e0a800; 
-}
-
-.delete-button {
-    background-color: #dc3545; 
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.delete-button:hover {
-    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
-}
-
-
-.edit-comment-button {
-    background-color: #ffc107; /* Amarillo */
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 5px;
-}
-
-.edit-comment-button:hover {
-    background-color: #e0a800;
-}
-
-.delete-comment-button {
-    background-color: #dc3545; /* Rojo */
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.delete-comment-button:hover {
-    background-color: #c82333;
-}
-
-
-.buttons button:first-child { /* likes de publicacion*/
-    background: #1877f2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.buttons button:first-child:hover {
-    opacity: 0.8;
 }
 
 /* liked */
 .buttons button:first-child.liked {
-    background: #0056b3; /* tono azul oscuro */
+    background: #00A86B; /* 🟢 Verde césped cuando ya se ha dado "Me Gusta" */
     color: white;
 }
 
 .buttons button:first-child.liked:hover {
-    background: #003d82; /* hover*/
+    background: #008F5A;
 }
 
-/*   boton de likes de comentarios */
-
+/*   boton de likes de comentarios */
 .like-comment-button {
-    background: #1877f2; 
-    color: white;
+    background: #FFD700; /* 🥇 Dorado para el botón de "Me Gusta" del comentario */
+    color: #333;
     border: none; 
-    border-radius: 5px; 
-    padding: 5px 8px; 
+    border-radius: 15px; 
+    padding: 6px 12px; 
     cursor: pointer;
     font-size: 0.9em; 
     margin-right: 5px;
@@ -382,87 +422,72 @@ header {
 }
 
 .like-comment-button.liked {
-    background: #0056b3; 
+    background: #00A86B; /* 🟢 Verde césped */
     color: white;
-    
 }
 
 .like-comment-button:hover {
-    background: #0056b3; 
+    background: #CCAA00; 
 }
 
 .like-comment-button.liked:hover {
-    background: #003d82; 
+    background: #008F5A; 
 }
 
-/*.sidebar-profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 10px;
-    vertical-align: middle;
-    object-fit: cover;
-}*/
 
-   /* Ajustando el contenedor para la tabla de reportes */
-   .content .container {
-    max-width: 500%; /* Aumentamos el ancho máximo */
-    margin: 20px auto; /* Mantenemos el margen automático para centrar */
+/* ⚽ TABLA DE REPORTES */
+.content .container {
+    max-width: 500%;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px; /* Más redondeado */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Añademos scroll horizontal si la tabla sigue siendo muy ancha */
+    overflow-x: auto;
 }
 
 .report-table tbody tr {
-    background-color: #e0f2f7; /* Un azul muy claro */
+    background-color: #F8FFF8; /* Un color muy claro */
 }
 
-/* Para un efecto de hover sutil */
 .report-table tbody tr:hover {
-    background-color: #b3e5fc;
+    background-color: #E6FFEE; /* Verde muy sutil al pasar el ratón */
 }
 
 
 .report-table th { 
-    background-color: #075fd3;
+    background-color: #008000; /* 🟢 Verde estadio para los encabezados de tabla */
     font-weight: bold;
+    color: white;
+    padding: 12px 8px;
 }
 
 
 .report-table th, .report-table td {
-    border: 1px solid #888; /* Cambiamos el color a un gris más oscuro y aumentamos el grosor */
-    padding: 8px;
+    border: 1px solid #BBBBBB;
+    padding: 10px 8px; /* Más padding */
     text-align: left;
 }
 
+/* Líneas divisorias más notorias (Verde) */
 .report-table th, .report-table td {
-    border: 1px solid #ddd; /* Líneas divisorias grises y delgadas (actual) */
-    padding: 8px;
-    text-align: left;
+    border: 2px solid #CCEECC; 
 }
 
-/* Para hacer las líneas divisorias más notorias */
-.report-table th, .report-table td {
-    border: 2px solid #aaa; /* Líneas divisorias grises más gruesas */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
-
-  .report-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
 .report-header h3 {
     margin: 0;
+    color: #008000; /* Verde estadio */
 }
 
 .report-header span {
     font-size: 1.2em;
     font-weight: bold;
-    color: #007bff;
-    
-    
+    color: #FFD700; /* Dorado Trofeo */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-
